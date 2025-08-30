@@ -1,0 +1,192 @@
+{
+    "modules": {
+        "DFFR_X1": {
+            "attributes": {
+                "blackbox": "00000000000000000000000000000001"
+            },
+            "ports": {
+                "RN": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                },
+                "CK": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                },
+                "D": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                },
+                "Q": {
+                    "direction": "output",
+                    "bits": [
+                        0
+                    ]
+                }
+            }
+        },
+        "XNOR2_X1": {
+            "attributes": {
+                "blackbox": "00000000000000000000000000000001"
+            },
+            "ports": {
+                "A": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                },
+                "ZN": {
+                    "direction": "output",
+                    "bits": [
+                        0
+                    ]
+                },
+                "B": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                }
+            }
+        },
+        "NOR2_X1": {
+            "attributes": {
+                "blackbox": "00000000000000000000000000000001"
+            },
+            "ports": {
+                "A1": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                },
+                "ZN": {
+                    "direction": "output",
+                    "bits": [
+                        0
+                    ]
+                },
+                "A2": {
+                    "direction": "input",
+                    "bits": [
+                        0
+                    ]
+                }
+            }
+        },
+        "top": {
+            "attributes": {
+                "top": "00000000000000000000000000000001"
+            },
+            "cells": {
+                "_3_": {
+                    "type": "NOR2_X1",
+                    "attributes": {
+                        "module_not_derived": "00000000000000000000000000000001"
+                    },
+                    "port_directions": {
+                        "A2": "input",
+                        "ZN": "output"
+                    },
+                    "connections": {
+                        "A2": [
+                            -2
+                        ],
+                        "ZN": [
+                            0
+                        ]
+                    }
+                },
+                "_4_": {
+                    "type": "XNOR2_X1",
+                    "attributes": {
+                        "module_not_derived": "00000000000000000000000000000001"
+                    },
+                    "port_directions": {
+                        "B": "input",
+                        "ZN": "output"
+                    },
+                    "connections": {
+                        "B": [
+                            0
+                        ],
+                        "ZN": [
+                            1
+                        ]
+                    }
+                },
+                "_5_": {
+                    "type": "DFFR_X1",
+                    "attributes": {
+                        "module_not_derived": "00000000000000000000000000000001"
+                    },
+                    "port_directions": {
+                        "D": "input",
+                        "CK": "input"
+                    },
+                    "connections": {
+                        "D": [
+                            1
+                        ],
+                        "CK": [
+                            -2
+                        ]
+                    }
+                }
+            },
+            "netnames": {
+                "net0": {
+                    "bits": [
+                        0
+                    ],
+                    "hide_name": 0
+                },
+                "net1": {
+                    "bits": [
+                        1
+                    ],
+                    "hide_name": 0
+                },
+                "net2": {
+                    "bits": [
+                        2
+                    ],
+                    "hide_name": 0
+                },
+                "net3": {
+                    "bits": [
+                        3
+                    ],
+                    "hide_name": 0
+                },
+                "net4": {
+                    "bits": [
+                        4
+                    ],
+                    "hide_name": 0
+                },
+                "net5": {
+                    "bits": [
+                        5
+                    ],
+                    "hide_name": 0
+                }
+            },
+            "ports": {
+                "clk": {
+                    "direction": "input",
+                    "bits": [
+                        -2
+                    ]
+                }
+            }
+        }
+    }
+}

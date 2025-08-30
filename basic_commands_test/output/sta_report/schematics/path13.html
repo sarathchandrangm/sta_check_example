@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+  width: 100%; 
+}
+header {
+  background-image: url('../../../images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 55px;
+  text-align: center;
+  overflow-x: auto;
+}
+
+nav {
+  height: 100%;
+  overflow-y: auto; 
+  width: 130px;
+  position: absolute;
+  background-color: #eee; 
+  padding: 10px 16px;
+  color: #000000;
+}
+
+nav a {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+}
+
+nav a:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+main {
+  margin-left: 160px;
+  font-size: 18px;
+  padding: 20px;
+  background-color: #fff;
+  overflow-x: auto;
+  height: 100vh; 
+}
+
+@media screen and (max-height: 450px) {
+
+  nav a {font-size: 14px;}
+}
+</style>
+
+</head>
+<body>
+<header>
+  <h1 style="font-size: 55px;">Path View</h1>
+  <a href="https://github.com/kanndil/PathView"><img src = "../../../images/github.svg" alt="github"style="width:42px;height:42px;"/></a>
+
+</header>
+
+ <nav><a href="path0.html">Slack: 0.32</a> 
+<a href="path1.html">Slack: 0.32</a> 
+<a href="path2.html">Slack: 0.10</a> 
+<a href="path3.html">Slack: 0.12</a> 
+<a href="path4.html">Slack: 0.13</a> 
+<a href="path5.html">Slack: 0.14</a> 
+<a href="path6.html">Slack: 0.16</a> 
+<a href="path7.html">Slack: 0.29</a> 
+<a href="path8.html">Slack: 0.53</a> 
+<a href="path9.html">Slack: 8.05</a> 
+<a href="path10.html">Slack: 8.05</a> 
+<a href="path11.html">Slack: 7.40</a> 
+<a href="path12.html">Slack: 7.44</a> 
+<a href="path13.html">Slack: 7.46</a> 
+<a href="path14.html">Slack: 7.93</a> 
+<a href="path15.html">Slack: 8.12</a> 
+<a href="path16.html">Slack: 9.81</a> 
+ </nav>
+
+
+<main>
+   
+<h4> Path: 14</h4>
+
+<h5>Startpoint: d (input port clocked by CLK)</h5>
+        
+<h5>Endpoint: _6_ (rising edge-triggered flip-flop clocked by CLK)</h5>
+
+<h5>Slack: 7.46</h5>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:s="https://github.com/nturley/netlistsvg" width="144" height="84"><style>svg {
+  stroke:#000;
+  fill:none;
+}
+text {
+  fill:#000;
+  stroke:none;
+  font-size:10px;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+}
+.input-text {
+    fill: #000;
+    stroke:none;
+    font-size: 8.5px;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+    text-anchor: end;
+}
+.output-text {
+    fill: #000;
+    stroke: none;
+    font-size: 8.5px ;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+}
+.nodelabel {
+  text-anchor: middle;
+}
+.inputPortLabel {
+  text-anchor: end;
+}
+.splitjoinBody {
+  fill:#000;
+}</style><g s:type="DFFR_X1" onClick="reply_click(this.id)" transform="translate(92,12)" s:width="40" s:height="60" id="cell__6_"><g id="flipflop"/><s:alias val="DFFR_X1"/><rect width="40" height="60" x="0" y="0" class="cell__6_"/><path d="M0,45 L5,50 L0,55" class="cell__6_"/><g s:x="0" s:y="50" s:pid="CK"/><g s:x="0" s:y="10" s:pid="D"/><g s:x="0" s:y="20" s:pid="RN"/><g s:x="0" s:y="30" s:pid="input3"/><g s:x="0" s:y="40" s:pid="input4"/><g s:x="40" s:y="20" s:pid="Q"/><g s:x="40" s:y="40" s:pid="QN"/><g s:x="40" s:y="20" s:pid="out"/><text text-anchor="middle" x="20" y="-4" font-family="Times New Roman,serif" font-size="14.00">DFFR_X1</text><text x="-2" y="49" class="input-text">CK</text><text x="-2" y="9" class="input-text">D</text><text x="-2" y="19" class="input-text">RN</text><text x="42" y="19" class="output-text">Q</text><text x="42" y="39" class="output-text">QN</text></g><g s:type="inputExt" transform="translate(12,52)" s:width="30" s:height="20" id="cell_clk"><text x="15" y="-4" class="nodelabel cell_clk" s:attribute="ref">clk</text><s:alias val="$_inputExt_"/><path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z" class="cell_clk"/><g s:x="28" s:y="10" s:pid="Y"/></g><line x1="40" x2="67" y1="62" y2="62" class="net_-2 width_1" style="stroke-width: 1"/><line x1="67" x2="67" y1="62" y2="22" class="net_-2 width_1" style="stroke-width: 1"/><circle cx="67" cy="62" r="2" style="fill:#000" class="net_-2 width_1"/><line x1="67" x2="92" y1="22" y2="22" class="net_-2 width_1" style="stroke-width: 1"/><line x1="40" x2="92" y1="62" y2="62" class="net_-2 width_1" style="stroke-width: 1"/> 
+<line   x1="40" x2="67" y1="62" y2="62" onClick="net_click(this.id)" id="0" class="net-2 width_1" style="stroke: white; opacity: 0 ; stroke-width: 18;" />
+<line   x1="67" x2="67" y1="62" y2="22" onClick="net_click(this.id)" id="0" class="net-2 width_1" style="stroke: white; opacity: 0 ; stroke-width: 18;" />
+<line   x1="67" x2="92" y1="22" y2="22" onClick="net_click(this.id)" id="0" class="net-2 width_1" style="stroke: white; opacity: 0 ; stroke-width: 18;" />
+<line   x1="40" x2="92" y1="62" y2="62" onClick="net_click(this.id)" id="0" class="net-2 width_1" style="stroke: white; opacity: 0 ; stroke-width: 18;" />
+</svg> 
+    
+</main>
+   
+</body>
+</html> 
+
+
+        <script type="text/javascript">
+            function reply_click(id)
+            {
+                const cells = [['_6_', 'input', '0.00', '2.50', 'D'], ['_6_', 'input', '10.00', '^', 'CK']] ;
+        
+                var cellName = "";
+                var logicpath= "";
+                var clkpath= "";
+                var count=0;
+                var data = "";
+                var flag = 0;
+                var parent = document.getElementById(id);
+                var child = parent.querySelector("#flipflop");
+                if (child !== null) {
+                    flag =1;
+                    for (let i = 0; i < cells.length; i++) { 
+                        if (("cell_" + cells[i][0]) == id ){
+                            cellName = "Cell name: " + cells[i][0]+"\n\n";
+                            if (cells[i][1] == "input"){
+                                data += "\tPin (" + cells[i][4] + ") arrival time = " + cells[i][3]+"\n\n";
+                            } else {
+                                data += "\tDelay = " + cells[i][2] + "\n";
+                                data += "\tPin (" + cells[i][4] +  ") time = " + cells[i][3] + "\n";
+                            }
+                            count = count+1;
+                        }
+                    }
+                  } else {
+                    for (let i = 0; i < cells.length; i++) { 
+                        if (("cell_" + cells[i][0]) == id ){
+                            flag = 1
+                            cellName = "Cell name: " + cells[i][0]+"\n";
+                            if (count < 2){
+                                if (cells[i][1] == "input"){
+                                    logicpath += "\tPin (" + cells[i][4] + ") arrival time = " + cells[i][3]+"\n\n";
+                                } else {
+                                    logicpath += "\tDelay = " + cells[i][2] + "\n";
+                                    logicpath += "\tPin (" + cells[i][4] +  ") time = " + cells[i][3] + "\n";
+                                }
+                            } else {
+                                if (count == 3 ){
+                                    logicpath = "\nLogic Path: \n" + logicpath ;
+                                    clkpath = "\nClock Path: \n";
+                                }
+                                if (cells[i][1] == "input"){
+                                    clkpath += "\tPin (" + cells[i][4] + ") arrival time = " + cells[i][3]+"\n\n";
+                                } else {
+                                    clkpath += "\tDelay = " + cells[i][2] + "\n";
+                                    clkpath += "\tPin (" + cells[i][4] +  ") time = " + cells[i][3] + "\n";
+                                }
+                                
+                            }
+                            data = logicpath + clkpath;
+                            count = count+1;
+                        }
+                    }
+                  }
+
+                if (flag){
+                    alert(cellName + data);
+                }
+            }
+            
+            function net_click(id)
+            {
+                const nets = [['0.00', '2.50'], ['10.00', '^']] ;
+                var data = "net_" + id;
+                var i = parseInt(id);
+                if (nets[i].length == 2){
+                    data += "\n\tdelay = " + nets[i][0];
+                    data += "\n\ttime = " + nets[i][1] + "\n";
+                } else if (nets[i].length == 4){
+                    data+= "\n\nLogic Path:"
+                    data+= "\n\tdelay = " + nets[i][0];
+                    data+= "\n\ttime = " + nets[i][1];
+                    data+= "\n\nClock Path:"
+                    data+= "\n\tdelay = " + nets[i][2];
+                    data+= "\n\ttime = " + nets[i][3];
+                }
+                alert(data);
+            }
+            
+        </script>
+    
