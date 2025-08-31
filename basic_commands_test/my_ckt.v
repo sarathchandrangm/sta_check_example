@@ -1,12 +1,12 @@
 
 module my_ckt (
-    input wire clk,
-    input wire rst_n,
-    input wire d,
-    input wire b,
-    input wire f,
-    input wire g,
-    output reg q1
+    input  clk,
+    input  rst_n,
+    input  d,
+    input  b,
+    input  f,
+    input  g,
+    output q1
 );
     wire a, e, c, f;
     reg q;
