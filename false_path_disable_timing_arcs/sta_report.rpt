@@ -1,5 +1,5 @@
-Warning: constraints.sdc line 53, unknown field nets.
-Warning: constraints.sdc line 53, report_checks -endpoint_count is deprecated. Use -endpoint_path_count instead.
+Warning: constraints.sdc line 62, unknown field nets.
+Warning: constraints.sdc line 62, report_checks -endpoint_count is deprecated. Use -endpoint_path_count instead.
 Startpoint: rst_n (input port clocked by CLK)
 Endpoint: _3_ (removal check against rising-edge clock CLK)
 Path Group: asynchronous
@@ -90,7 +90,7 @@ Fanout       Cap      Slew     Delay      Time   Description
                     0.1000    0.0000    0.0000   clock CLK (rise edge)
                               1.5000    1.5000   clock network delay (ideal)
                               0.1000    1.6000 v input external delay
-     1    1.0527    0.0500    0.0000    1.6000 v d (in)
+     2    4.0874    0.0500    0.0000    1.6000 v d (in)
                     0.0500    0.0000    1.6000 v _3_/D (DFFR_X1)
                                         1.6000   data arrival time
 
@@ -117,11 +117,11 @@ Fanout       Cap      Slew     Delay      Time   Description
                     0.1000    0.0000    0.0000   clock CLK (rise edge)
                               1.5000    1.5000   clock network delay (ideal)
                     0.1000    0.0000    1.5000 ^ _3_/CK (DFFR_X1)
-     1    5.8101    0.0107    0.1099    1.6099 v _3_/Q (DFFR_X1)
-                    0.0107    0.0000    1.6099 v _4_/A (BUF_X8)
-     1    1.0527    0.0039    0.0229    1.6328 v _4_/Z (BUF_X8)
-                    0.0039    0.0000    1.6328 v _2_/D (DFFR_X1)
-                                        1.6328   data arrival time
+     2    9.0339    0.0137    0.1146    1.6146 v _3_/Q (DFFR_X1)
+                    0.0137    0.0000    1.6146 v _4_/A (BUF_X8)
+     1    1.0527    0.0039    0.0245    1.6391 v _4_/Z (BUF_X8)
+                    0.0039    0.0000    1.6391 v _2_/D (DFFR_X1)
+                                        1.6391   data arrival time
 
                     0.0000    0.0000    0.0000   clock CLK_G (rise edge)
                               0.0000    0.0000   clock network delay (ideal)
@@ -131,9 +131,9 @@ Fanout       Cap      Slew     Delay      Time   Description
                                         0.2000   data required time
 -------------------------------------------------------------------------------------
                                         0.2000   data required time
-                                       -1.6328   data arrival time
+                                       -1.6391   data arrival time
 -------------------------------------------------------------------------------------
-                                        1.4328   slack (MET)
+                                        1.4391   slack (MET)
 
 
 Startpoint: rst_n (input port clocked by CLK)
@@ -226,7 +226,7 @@ Fanout       Cap      Slew     Delay      Time   Description
                     0.1000    0.0000    0.0000   clock CLK (rise edge)
                               1.5000    1.5000   clock network delay (ideal)
                               2.5000    4.0000 v input external delay
-     1    1.0527    0.6000    0.0000    4.0000 v d (in)
+     2    4.0874    0.6000    0.0000    4.0000 v d (in)
                     0.6000    0.0000    4.0000 v _3_/D (DFFR_X1)
                                         4.0000   data arrival time
 
@@ -253,11 +253,11 @@ Fanout       Cap      Slew     Delay      Time   Description
                     0.1000    0.0000    0.0000   clock CLK (rise edge)
                               1.5000    1.5000   clock network delay (ideal)
                     0.1000    0.0000    1.5000 ^ _3_/CK (DFFR_X1)
-     1    6.5852    0.0197    0.1287    1.6287 ^ _3_/Q (DFFR_X1)
-                    0.0197    0.0000    1.6287 ^ _4_/A (BUF_X8)
-     1    1.1283    0.0044    0.0204    1.6490 ^ _4_/Z (BUF_X8)
-                    0.0044    0.0000    1.6490 ^ _2_/D (DFFR_X1)
-                                        1.6490   data arrival time
+     2   10.1217    0.0272    0.1367    1.6367 ^ _3_/Q (DFFR_X1)
+                    0.0272    0.0000    1.6367 ^ _4_/A (BUF_X8)
+     1    1.1283    0.0048    0.0216    1.6582 ^ _4_/Z (BUF_X8)
+                    0.0048    0.0000    1.6582 ^ _2_/D (DFFR_X1)
+                                        1.6582   data arrival time
 
                     0.0000   15.0000   15.0000   clock CLK_G (rise edge)
                               0.0000   15.0000   clock network delay (ideal)
@@ -267,8 +267,8 @@ Fanout       Cap      Slew     Delay      Time   Description
                                        14.5000   data required time
 -------------------------------------------------------------------------------------
                                        14.5000   data required time
-                                       -1.6490   data arrival time
+                                       -1.6582   data arrival time
 -------------------------------------------------------------------------------------
-                                       12.8510   slack (MET)
+                                       12.8418   slack (MET)
 
 

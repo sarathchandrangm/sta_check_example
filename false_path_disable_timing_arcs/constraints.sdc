@@ -39,11 +39,20 @@ set_output_delay -clock CLK 1.8 -max -fall [get_ports q1]
 set_output_delay -clock CLK 0.2 -min -rise [get_ports q1]
 set_output_delay -clock CLK 0.5 -min -fall [get_ports q1]
 
+set_output_delay -clock CLK 1.5 -max -rise [get_ports out1]
+set_output_delay -clock CLK 1.8 -max -fall [get_ports out1]
+set_output_delay -clock CLK 0.2 -min -rise [get_ports out1]
+set_output_delay -clock CLK 0.5 -min -fall [get_ports out1]
+
 
 #sets the setup time for a path
 set_assigned_check -setup 0.5 -from _2_/CK -to _2_/D
 set_assigned_check -hold 0.2 -from _2_/CK -to _2_/D
 set_assigned_check -setup 0.5 -from _3_/CK -to _3_/D
+
+set_disable_timing -from [get_ports _5_/A2] -to [get_ports _5_/ZN] _5_
+
+# set_max_delay -from [get_ports d] -to [get_ports q1] 6
 
 #to get the timing path
 # get_full_name [get_timing_edges -from _3_/Q -to _2_/D]
@@ -55,70 +64,3 @@ report_checks -path_delay min_max -format full_clock_expanded -fields {slew cap 
 #to know about the limits of the design
 report_check_type
 
-
-
-proc find_fanin {pin} {
-    foreach fanin [get_fanin -to $pin] {
-        puts "fanin: [get_full_name $fanin]"
-    }
-}
-
-proc find_fanout {pin} {
-    foreach fanin [get_fanout -from $pin] {
-        puts "fanout: [get_full_name $fanin]"
-    }
-}
-
-proc print_list {my_list} {
-    foreach item $my_list {
-        puts "Item: [get_full_name $item] [get_property $item sense]"
-    }
-
-}
-
-proc prin_pin_info {pin} {
-    puts "Pin: [get_full_name $pin]"
-    puts "Direction: [get_property $pin direction]"
-    puts "Slack Max: [get_property $pin slack_max]"
-    puts "Slack Min: [get_property $pin slack_min]"
-    puts "Slew Max: [get_property $pin slew_max]"
-    puts "Slew Min: [get_property $pin slew_min]"
-}
-
-proc analyze_pin {pin} {
-    prin_pin_info $pin
-    puts "Fanin pins:"
-    print_list [get_fanin -to $pin]
-    puts "Fanout pins:"
-    print_list [get_fanout -from $pin]
-}
-
-proc list_points { start end } {
-    set points_list [get_property [find_timing_path -from $start -to $end] points]
-    set slack [get_property [find_timing_path -from $start -to $end] slack]
-    puts "Total Points: [llength $points_list] Slack: $slack"
-    set point_count 1
-    foreach point $points_list {
-        puts "Point $point_count: [get_full_name [get_property $point pin]]"
-        # prin_pin_info [get_property $point pin]
-        puts "Arrival : [get_property $point arrival] Slack: [get_property $point slack] "
-        incr point_count
-    }
-}
-
-
-proc expand_timing_edges { inst_obj } {
-    set edges [get_timing_edges -of_objects $inst_obj]
-    set count 1
-    foreach timing_arc [lindex $edges 0] {
-        puts "$count.Name: [get_full_name $timing_arc]"
-        # puts "From: [get_full_name [get_property $timing_arc from_pin]] To: [get_full_name [get_property $timing_arc to_pin]]"
-        puts "Delay Max Rise: [get_property $timing_arc delay_max_rise]"
-        puts "Delay Max fall: [get_property $timing_arc delay_max_fall]"
-        puts "Delay Min Rise: [get_property $timing_arc delay_min_rise]"
-        puts "Delay Min fall: [get_property $timing_arc delay_min_fall]"
-        puts "Sense : [get_property $timing_arc sense]"
-        puts "-----------------------------"
-        incr count
-    }
-}
