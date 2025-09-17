@@ -1,0 +1,358 @@
+Warning: constraints.sdc line 68, unknown field nets.
+Warning: constraints.sdc line 68, report_checks -endpoint_count is deprecated. Use -endpoint_path_count instead.
+Startpoint: rst_n (input port clocked by CLK)
+Endpoint: _2_ (removal check against rising-edge clock CLK)
+Path Group: asynchronous
+Path Type: min
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              0.5000    2.0000 ^ input external delay
+     2    3.5571    0.1000    0.0000    2.0000 ^ rst_n (in)
+                    0.1000    0.0000    2.0000 ^ _2_/RN (DFFR_X1)
+                                        2.0000   data arrival time
+
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0170    1.5170 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5170 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0198    1.5367 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5367 ^ _9_/A (BUF_X8)
+     1    6.5852    0.0054    0.0195    1.5562 ^ _9_/Z (BUF_X8)
+                    0.0054    0.0000    1.5562 ^ _10_/A (BUF_X8)
+     1    0.9766    0.0040    0.0172    1.5735 ^ _10_/Z (BUF_X8)
+                    0.0040    0.0000    1.5735 ^ _2_/CK (DFFR_X1)
+                              0.0000    1.5735   clock reconvergence pessimism
+                              0.3071    1.8806   library removal time
+                                        1.8806   data required time
+-------------------------------------------------------------------------------------
+                                        1.8806   data required time
+                                       -2.0000   data arrival time
+-------------------------------------------------------------------------------------
+                                        0.1194   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by CLK)
+Endpoint: _3_ (removal check against rising-edge clock CLK)
+Path Group: asynchronous
+Path Type: min
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              0.5000    2.0000 ^ input external delay
+     2    3.5571    0.1000    0.0000    2.0000 ^ rst_n (in)
+                    0.1000    0.0000    2.0000 ^ _3_/RN (DFFR_X1)
+                                        2.0000   data arrival time
+
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0170    1.5170 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5170 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0198    1.5367 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5367 ^ _3_/CK (DFFR_X1)
+                              0.0000    1.5367   clock reconvergence pessimism
+                              0.3075    1.8442   library removal time
+                                        1.8442   data required time
+-------------------------------------------------------------------------------------
+                                        1.8442   data required time
+                                       -2.0000   data arrival time
+-------------------------------------------------------------------------------------
+                                        0.1558   slack (MET)
+
+
+Startpoint: _3_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _2_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0139    1.5139 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5139 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0162    1.5301 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5301 ^ _3_/CK (DFFR_X1)
+     1    5.8101    0.0107    0.0843    1.6144 v _3_/Q (DFFR_X1)
+                    0.0107    0.0000    1.6144 v _4_/A (BUF_X8)
+     1    1.0527    0.0039    0.0206    1.6350 v _4_/Z (BUF_X8)
+                    0.0039    0.0000    1.6350 v _2_/D (DFFR_X1)
+                                        1.6350   data arrival time
+
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0170    1.5170 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5170 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0198    1.5367 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5367 ^ _9_/A (BUF_X8)
+     1    6.5852    0.0054    0.0195    1.5562 ^ _9_/Z (BUF_X8)
+                    0.0054    0.0000    1.5562 ^ _10_/A (BUF_X8)
+     1    0.9766    0.0040    0.0172    1.5735 ^ _10_/Z (BUF_X8)
+                    0.0040    0.0000    1.5735 ^ _2_/CK (DFFR_X1)
+                             -0.0067    1.5668   clock reconvergence pessimism
+                              0.2000    1.7668   library hold time
+                                        1.7668   data required time
+-------------------------------------------------------------------------------------
+                                        1.7668   data required time
+                                       -1.6350   data arrival time
+-------------------------------------------------------------------------------------
+                                       -0.1317   slack (VIOLATED)
+
+
+Startpoint: d (input port clocked by CLK)
+Endpoint: _3_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              0.1000    1.6000 v input external delay
+     1    1.0527    0.0500    0.0000    1.6000 v d (in)
+                    0.0500    0.0000    1.6000 v _3_/D (DFFR_X1)
+                                        1.6000   data arrival time
+
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0170    1.5170 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5170 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0198    1.5367 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5367 ^ _3_/CK (DFFR_X1)
+                              0.0000    1.5367   clock reconvergence pessimism
+                              0.0076    1.5443   library hold time
+                                        1.5443   data required time
+-------------------------------------------------------------------------------------
+                                        1.5443   data required time
+                                       -1.6000   data arrival time
+-------------------------------------------------------------------------------------
+                                        0.0557   slack (MET)
+
+
+Startpoint: _2_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: q1 (output port clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0139    1.5139 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5139 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0162    1.5301 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5301 ^ _9_/A (BUF_X8)
+     1    6.5852    0.0054    0.0160    1.5460 ^ _9_/Z (BUF_X8)
+                    0.0054    0.0000    1.5460 ^ _10_/A (BUF_X8)
+     1    0.9766    0.0040    0.0141    1.5601 ^ _10_/Z (BUF_X8)
+                    0.0040    0.0000    1.5601 ^ _2_/CK (DFFR_X1)
+     1    0.0000    0.0065    0.0865    1.6466 ^ _2_/Q (DFFR_X1)
+                    0.0065    0.0000    1.6466 ^ q1 (out)
+                                        1.6466   data arrival time
+
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              0.0000    1.5000   clock reconvergence pessimism
+                             -0.2000    1.3000   output external delay
+                                        1.3000   data required time
+-------------------------------------------------------------------------------------
+                                        1.3000   data required time
+                                       -1.6466   data arrival time
+-------------------------------------------------------------------------------------
+                                        0.3466   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by CLK)
+Endpoint: _3_ (recovery check against rising-edge clock CLK)
+Path Group: asynchronous
+Path Type: max
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              2.0000    3.5000 ^ input external delay
+     2    3.5571    0.8000    0.0000    3.5000 ^ rst_n (in)
+                    0.8000    0.0000    3.5000 ^ _3_/RN (DFFR_X1)
+                                        3.5000   data arrival time
+
+                             10.0000   10.0000   clock CLK (rise edge)
+                              1.5000   11.5000   clock source latency
+     1    6.5852    0.0000    0.0000   11.5000 ^ clk (in)
+                    0.0000    0.0000   11.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0139   11.5139 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000   11.5139 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0162   11.5301 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000   11.5301 ^ _3_/CK (DFFR_X1)
+                              0.0000   11.5301   clock reconvergence pessimism
+                             -0.1289   11.4011   library recovery time
+                                       11.4011   data required time
+-------------------------------------------------------------------------------------
+                                       11.4011   data required time
+                                       -3.5000   data arrival time
+-------------------------------------------------------------------------------------
+                                        7.9011   slack (MET)
+
+
+Startpoint: rst_n (input port clocked by CLK)
+Endpoint: _2_ (recovery check against rising-edge clock CLK)
+Path Group: asynchronous
+Path Type: max
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              2.0000    3.5000 ^ input external delay
+     2    3.5571    0.8000    0.0000    3.5000 ^ rst_n (in)
+                    0.8000    0.0000    3.5000 ^ _2_/RN (DFFR_X1)
+                                        3.5000   data arrival time
+
+                             10.0000   10.0000   clock CLK (rise edge)
+                              1.5000   11.5000   clock source latency
+     1    6.5852    0.0000    0.0000   11.5000 ^ clk (in)
+                    0.0000    0.0000   11.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0139   11.5139 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000   11.5139 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0162   11.5301 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000   11.5301 ^ _9_/A (BUF_X8)
+     1    6.5852    0.0054    0.0160   11.5460 ^ _9_/Z (BUF_X8)
+                    0.0054    0.0000   11.5460 ^ _10_/A (BUF_X8)
+     1    0.9766    0.0040    0.0141   11.5601 ^ _10_/Z (BUF_X8)
+                    0.0040    0.0000   11.5601 ^ _2_/CK (DFFR_X1)
+                              0.0000   11.5601   clock reconvergence pessimism
+                             -0.1300   11.4301   library recovery time
+                                       11.4301   data required time
+-------------------------------------------------------------------------------------
+                                       11.4301   data required time
+                                       -3.5000   data arrival time
+-------------------------------------------------------------------------------------
+                                        7.9301   slack (MET)
+
+
+Startpoint: d (input port clocked by CLK)
+Endpoint: _3_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock network delay (propagated)
+                              2.5000    4.0000 v input external delay
+     1    1.0527    0.6000    0.0000    4.0000 v d (in)
+                    0.6000    0.0000    4.0000 v _3_/D (DFFR_X1)
+                                        4.0000   data arrival time
+
+                             10.0000   10.0000   clock CLK (rise edge)
+                              1.5000   11.5000   clock source latency
+     1    6.5852    0.0000    0.0000   11.5000 ^ clk (in)
+                    0.0000    0.0000   11.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0139   11.5139 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000   11.5139 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0162   11.5301 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000   11.5301 ^ _3_/CK (DFFR_X1)
+                              0.0000   11.5301   clock reconvergence pessimism
+                             -0.5000   11.0301   library setup time
+                                       11.0301   data required time
+-------------------------------------------------------------------------------------
+                                       11.0301   data required time
+                                       -4.0000   data arrival time
+-------------------------------------------------------------------------------------
+                                        7.0301   slack (MET)
+
+
+Startpoint: _2_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: q1 (output port clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0170    1.5170 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5170 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0198    1.5367 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5367 ^ _9_/A (BUF_X8)
+     1    6.5852    0.0054    0.0195    1.5562 ^ _9_/Z (BUF_X8)
+                    0.0054    0.0000    1.5562 ^ _10_/A (BUF_X8)
+     1    0.9766    0.0040    0.0172    1.5735 ^ _10_/Z (BUF_X8)
+                    0.0040    0.0000    1.5735 ^ _2_/CK (DFFR_X1)
+     1    0.0000    0.0050    0.0906    1.6641 v _2_/Q (DFFR_X1)
+                    0.0050    0.0000    1.6641 v q1 (out)
+                                        1.6641   data arrival time
+
+                             10.0000   10.0000   clock CLK (rise edge)
+                              1.5000   11.5000   clock network delay (propagated)
+                              0.0000   11.5000   clock reconvergence pessimism
+                             -1.8000    9.7000   output external delay
+                                        9.7000   data required time
+-------------------------------------------------------------------------------------
+                                        9.7000   data required time
+                                       -1.6641   data arrival time
+-------------------------------------------------------------------------------------
+                                        8.0359   slack (MET)
+
+
+Startpoint: _3_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _2_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                              0.0000    0.0000   clock CLK (rise edge)
+                              1.5000    1.5000   clock source latency
+     1    6.5852    0.0000    0.0000    1.5000 ^ clk (in)
+                    0.0000    0.0000    1.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0170    1.5170 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000    1.5170 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0198    1.5367 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000    1.5367 ^ _3_/CK (DFFR_X1)
+     1    6.5852    0.0196    0.1245    1.6612 ^ _3_/Q (DFFR_X1)
+                    0.0196    0.0000    1.6612 ^ _4_/A (BUF_X8)
+     1    1.1283    0.0044    0.0224    1.6836 ^ _4_/Z (BUF_X8)
+                    0.0044    0.0000    1.6836 ^ _2_/D (DFFR_X1)
+                                        1.6836   data arrival time
+
+                             10.0000   10.0000   clock CLK (rise edge)
+                              1.5000   11.5000   clock source latency
+     1    6.5852    0.0000    0.0000   11.5000 ^ clk (in)
+                    0.0000    0.0000   11.5000 ^ _7_/A (BUF_X8)
+     1    6.5852    0.0054    0.0139   11.5139 ^ _7_/Z (BUF_X8)
+                    0.0054    0.0000   11.5139 ^ _8_/A (BUF_X8)
+     2    7.5618    0.0057    0.0162   11.5301 ^ _8_/Z (BUF_X8)
+                    0.0057    0.0000   11.5301 ^ _9_/A (BUF_X8)
+     1    6.5852    0.0054    0.0160   11.5460 ^ _9_/Z (BUF_X8)
+                    0.0054    0.0000   11.5460 ^ _10_/A (BUF_X8)
+     1    0.9766    0.0040    0.0141   11.5601 ^ _10_/Z (BUF_X8)
+                    0.0040    0.0000   11.5601 ^ _2_/CK (DFFR_X1)
+                              0.0067   11.5668   clock reconvergence pessimism
+                             -0.5000   11.0668   library setup time
+                                       11.0668   data required time
+-------------------------------------------------------------------------------------
+                                       11.0668   data required time
+                                       -1.6836   data arrival time
+-------------------------------------------------------------------------------------
+                                        9.3831   slack (MET)
+
+
